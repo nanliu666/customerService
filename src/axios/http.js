@@ -1,9 +1,6 @@
 // 对请求进行配置
 import axios from "axios"
 import Vue from 'vue'
-import store from '@/modules/10000/store/index';
-// let loginname = store.loginname || localStorage.getItem('loginname') || 'yujing'
-let loginname = 'yujing' //todo  等平台接口过来，先写死
 axios.defaults.timeout = 7000;
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
 axios.interceptors.request.use(
@@ -11,11 +8,6 @@ axios.interceptors.request.use(
     Vue.$vux.loading.show({
       text: '加载中' //以plugin形式调用
     })
-    if (config.url.includes('/ydzs/WebService/MobileMerchants/')) { //黄鑫接口需要加一个参数
-      config.params = {
-        'loginname': loginname
-      };
-    }
     return config
   },
   err => {

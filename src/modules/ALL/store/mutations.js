@@ -7,7 +7,7 @@ import {
   CLIENT_DETAIL,
   UINT_DETAIL,
 } from './mutation-types.js'
-import _ from '../assets/js/lodash'
+import _ from '@/assets/js/lodash'
 export default {
   [TO_PAGE_NAME](state, value) {
     state.toPageName = value
