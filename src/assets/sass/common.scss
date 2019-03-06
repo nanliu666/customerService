@@ -1,0 +1,407 @@
+@import "src/assets/sass/mixin";
+
+a,
+article,
+aside,
+b,
+body,
+button,
+dd,
+div,
+dl,
+dt,
+figcaption,
+figure,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+i,
+input,
+li,
+nav,
+p,
+section,
+select,
+span,
+textarea,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  font-family: $fr;
+
+  &:hover {
+    outline: none;
+  }
+}
+
+// input占位符颜色
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  @include sc(32px, rgba(209, 209, 209, 1));
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  @include sc(32px, rgba(209, 209, 209, 1));
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  @include sc(32px, rgba(209, 209, 209, 1));
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="search"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+textarea {
+  -webkit-appearance: none;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.back_img {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.margin {
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paddingTop {
+  padding-top: 1.95rem;
+}
+@keyframes backOpacity {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation_opactiy {
+  animation: backOpacity 2s ease-in-out infinite;
+}
+
+.cellValueClass {
+  font-family: $fr;
+  @include sc(30px, rgba(30, 30, 30, 1));
+}
+
+.placeholderClass {
+  font-family: $fr;
+  @include sc(30px, rgba(209, 209, 209, 1));
+}
+
+.fs-goaheadICon {
+  margin-left: 4px;
+  @include wh(6px, 10px);
+}
+
+.fs-backBox {
+  width: 50px;
+  height: 100%;
+
+}
+
+.fs-backICon {
+  @include wh(8px, 15px);
+}
+
+.appTopOther {
+  @include wh(100%, 56px);
+  background-color: #fff;
+}
+
+.appTopHome {
+  @include wh(100%, 60px);
+  background: linear-gradient(to right, rgba(103, 185, 255, 1), rgba(92, 128, 255, 1));
+}
+
+// //无数据
+.ListNoData {
+  @include center;
+
+  .noDataTittle {
+    @include flexCenter;
+    @include sc(30px, rgba(136, 136, 136, 1));
+    font-family: $fr;
+  }
+}
+
+//存放图片
+.imgBox {
+  @include flexCenter;
+
+  .fs-dropImg {
+    @include wh(11px, 6px);
+  }
+
+  .fs-dropDownImg {
+    @include wh(10px, 10px);
+  }
+}
+
+.content {
+  .reseveTitle {
+    background-color: #fff;
+
+    .danyuan {
+      @include sc(30px, rgba(136, 136, 136, 1));
+      padding: 32px 40px 0;
+      margin-bottom: 10px;
+      font-family: $fr;
+    }
+
+    .qi {
+      @include sc(34px, rgba(30, 30, 30, 1));
+      padding: 0 40px 20px;
+      font-family: $fm;
+      border-bottom: 2px solid rgb(244, 246, 248);
+    }
+
+    .shangji {
+      @include fj(space-between);
+      @include wh(100%, 106px);
+      @include flexHCenter;
+      padding: 0 40px;
+      border-bottom: 1px solid #f4f6f8;
+      font-family: $fr;
+      @include sc(32px, rgba(136, 136, 136, 1));
+
+      .shangjiNum {
+        @include sc(32px, rgba(105, 167, 254, 1));
+      }
+    }
+
+    .shangjiLi {
+      padding: 0 40px;
+      font-family: $fr;
+      @include sc(30px, #000);
+
+      li {
+        border-bottom: 1px solid #f4f6f8;
+        height: 96px;
+        line-height: 96px;
+        @include fj;
+
+        .shangjiLiLeft {
+          .Probability {
+            @include sc(30px, rgba(136, 136, 136, 1));
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .cientInfo {
+    @include sc(28px, rgba(136, 136, 136, 1));
+    padding: 16px 40px;
+    background-color: $bc;
+  }
+
+  .button {
+    @include fj(space-around);
+
+    button {
+      @include wh(640px, 88px);
+      @include sc(36px, $fc);
+      @include borderRadius(44px);
+      font-family: $fm;
+      margin-top: 40px;
+      box-shadow: 0 4px 20px 0 rgba(96, 137, 210, 0.17);
+    }
+
+    .submit {
+      background-color: rgba(105, 167, 254, 1);
+    }
+
+    .save {
+      background-color: rgba(120, 202, 255, 1);
+    }
+  }
+
+  .Xbutton {
+    @include fj(space-around);
+    padding: 0 44px;
+
+    button {
+      @include wh(320px, 88px);
+      @include sc(36px, $fc);
+      @include borderRadius(44px);
+      font-family: $fm;
+      margin-top: 40px;
+      box-shadow: 0 4px 20px 0 rgba(96, 137, 210, 0.17);
+    }
+
+    .submit {
+      background-color: rgba(105, 167, 254, 1);
+    }
+
+    .save {
+      background-color: rgba(120, 202, 255, 1);
+    }
+  }
+
+  .group {
+    .groupLi {
+      background-color: #fff;
+      @include wh(100%, 106px);
+      line-height: 106px;
+      @include fj;
+      padding: 0 40px;
+      @include flexHCenter;
+      border-bottom: 4px solid #f4f6f8;
+
+      .liLeft {
+        width: 36%;
+        @include fj(flex-start);
+        @include sc(30px, rgba(136, 136, 136, 1));
+
+        .badge {
+          margin-left: 4px;
+          @include flexCenter;
+          background-color: #fff;
+          color: red;
+        }
+      }
+
+      .liRight {
+        @include fj(flex-end);
+        @include flexHCenter;
+        width: 64%;
+
+        .remark {
+          width: 100%;
+          text-align: right;
+          @include ellipsis;
+        }
+
+        input {
+          height: 96px;
+          line-height: 96px;
+          width: 100%;
+          font-size: 30px;
+        }
+
+        .liRightContent {
+          text-align: right;
+          width: 100%;
+          @include ellipsis;
+
+          span {
+            margin-left: 5px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.button {
+  @include fj(space-around);
+
+  button {
+    @include wh(640px, 88px);
+    @include sc(36px, $fc);
+    @include borderRadius(44px);
+    font-family: $fm;
+    margin-top: 40px;
+    box-shadow: 0 4px 20px 0 rgba(96, 137, 210, 0.17);
+  }
+
+  .submit {
+    background-color: rgba(105, 167, 254, 1);
+  }
+}
