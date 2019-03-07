@@ -16,6 +16,7 @@ $noRent: rgba(206, 223, 234, 1); //不可租
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
 @mixin bis150($url) {
   background-image: url($url);
   background-repeat: no-repeat;
@@ -132,4 +133,15 @@ $noRent: rgba(206, 223, 234, 1); //不可租
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+// 分割线
+@mixin division($color: #DDE4F0) {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 50%;
+  background-color: $color;
+  right: 0;
+  top: 25%;
 }

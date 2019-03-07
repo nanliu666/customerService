@@ -5,7 +5,7 @@
       <div slot="left" @click="goback()" class="fs-backBox">
         <img src="../assets/images/back.png" class="fs-backICon" alt>
       </div>
-      <span>服务申请</span>
+      <span>{{headerTittle}}</span>
       <div slot="right" class="fs-EmailBox">
         <img src="../assets/images/Email.png" class="fs-Email" alt>
       </div>
@@ -16,6 +16,10 @@
 <script>
 import { XHeader } from "vux";
 export default {
+  data() {return{}},
+  props: {
+    headerTittle: String
+  },
   components: {
     XHeader
   },
@@ -24,6 +28,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "src/assets/sass/mixin";
+
 .comHeader {
   background-color: #3f4fa6;
 }

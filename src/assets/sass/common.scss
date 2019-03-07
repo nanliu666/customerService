@@ -143,6 +143,25 @@ html {
   white-space: nowrap;
 }
 
+//覆盖
+.weui-cells {
+  margin-top: 0 !important;
+}
+
+//icon统一使用
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.tabActive {
+  border-bottom: 1px solid #37c2cf;
+  color: #1E1E1E;
+}
+
 //头部公共css
 .appTopOther {
   @include wh(100%, 56px);
@@ -172,12 +191,31 @@ html {
   @include fj(flex-end)
 }
 
+.placeholderClass {
+  font-family: $fr;
+  @include sc(30px, #888888);
+  margin-right: 20px;
+}
+
+.cellValueClass {
+  font-family: $fr;
+  @include sc(30px, rgba(30, 30, 30, 1));
+}
+
+// 邮件
 .fs-Email {
   @include wh(20px, 15px)
 }
 
+// 返回
 .fs-backICon {
   @include wh(8px, 15px);
+}
+
+//获取更多
+.fs-goaheadICon {
+  margin-left: 4px;
+  @include wh(6px, 10px);
 }
 
 // //无数据
@@ -188,5 +226,32 @@ html {
     @include flexCenter;
     @include sc(30px, rgba(136, 136, 136, 1));
     font-family: $fr;
+  }
+}
+
+// input 没有行高有的机子会不行
+input {
+  height: 96px;
+  line-height: 96px;
+  width: 100%;
+  font-size: 30px;
+}
+
+.group {
+  .groupLi {
+    background-color: #fff;
+    @include wh(100%, 106px);
+    line-height: 106px;
+    @include fj;
+    padding: 0 40px;
+    @include flexHCenter;
+    border-bottom: 4px solid #f4f6f8;
+
+    .liLeft {
+      // width: 36%;
+      @include fj(flex-start);
+      @include sc(30px, rgba(136, 136, 136, 1));
+    }
+
   }
 }
