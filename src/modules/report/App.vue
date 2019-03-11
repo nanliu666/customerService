@@ -29,13 +29,6 @@ export default {
     } else {
       document.documentElement.appendChild(script);
     }
-    document.addEventListener("deviceready", this.onDeviceReady(), false);
-  },
-  methods: {
-    onDeviceReady() {
-      // 禁用安卓返回键
-      cordova.exec(null, null, "ifcaPlugIns", "enabledsystembackFunc", [false]);
-    }
   }
 };
 </script>
@@ -49,7 +42,6 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-
 
 #app {
   height: 100%;

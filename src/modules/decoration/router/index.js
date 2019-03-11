@@ -6,26 +6,19 @@ const decorationDetail = resolve => require(['../page/decorationDetail'], resolv
 
 
 export default [{
-  path: '/',
-  component: App, //顶层路由，对应index.html
-  children: [ //二级路由。对应App.vue
+    path: '',
+    redirect: '/decorationAdd'
+  },
 
-    {
-      path: '',
-      redirect: '/decorationAdd'
-    },
-
-    //服务申请
-    {
-      path: '/decorationAdd', //新增服务申请
-      component: decorationAdd,
-      name: 'decorationAdd',
-    },
-    {
-      path: '/decorationDetail', //新增服务申请
-      component: decorationDetail,
-      name: 'decorationDetail',
-    },
-
-  ]
-}]
+  //服务申请
+  {
+    path: '/decorationAdd', //新增服务申请
+    component: decorationAdd,
+    name: 'decorationAdd',
+  },
+  {
+    path: '/decorationDetail', //新增服务申请
+    component: decorationDetail,
+    name: 'decorationDetail',
+  },
+]

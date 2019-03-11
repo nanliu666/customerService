@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import axios from 'axios'
 import VueRouter from 'vue-router'
 import routes from './router'
 import App from './App'
@@ -14,8 +13,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 Vue.prototype._ = _
-Vue.prototype.$http = axios
-Vue.prototype.HOST = '/api'
+
 //注册到vue原型上
 //暂时解决 vue-loader 打包太大
 import {
@@ -78,27 +76,6 @@ Vue.prototype.goback = function (url) {
 Vue.use(VueRouter)
 const router = new VueRouter({
   routes,
-  // mode: 'history',
-  strict: process.env.NODE_ENV !== 'production',
-  scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      // 模拟锚点滚动
-      return {
-        selector: to.hash
-      }
-    }
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      if (from.meta.keepAlive) {
-        from.meta.savedPosition = document.body.scrollTop;
-      }
-      return {
-        x: 0,
-        y: to.meta.savedPosition || 0
-      }
-    }
-  }
 })
 new Vue({
   el: '#app',

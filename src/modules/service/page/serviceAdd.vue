@@ -102,8 +102,8 @@ export default {
             enabledcamera: true,
             enabledphoto: true,
             imageEdit: true,
-            waterMark: true
-            // waterMarkText: "项目部"
+            waterMark: true,
+            waterMarkText: "项目部"
           }
         ]
       );

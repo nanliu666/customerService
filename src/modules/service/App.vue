@@ -29,7 +29,7 @@ export default {
     } else {
       document.documentElement.appendChild(script);
     }
-  },
+  }
 };
 </script>
 <style lang="scss">
@@ -42,8 +42,6 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-
-
 
 #app {
   height: 100%;
