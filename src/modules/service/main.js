@@ -13,7 +13,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 Vue.prototype._ = _
-
 //注册到vue原型上
 //暂时解决 vue-loader 打包太大
 import {
