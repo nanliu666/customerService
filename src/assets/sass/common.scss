@@ -157,6 +157,46 @@ html {
   overflow: hidden;
 }
 
+// 公共提交保存按钮样式，是不固定在底部的
+.twoButton {
+  padding: 0 40px;
+  @include fj;
+
+  button {
+    @include wh(320px, 88px);
+    border-radius: 8px;
+    font-family: $fm;
+  }
+
+}
+
+.buttonSave {
+  background-color: #ebeefe;
+  border: 1px solid #6581ea;
+  @include sc(34px, #6581ea);
+}
+
+.buttonSubmit {
+  background-color: #6a84e5;
+  @include sc(34px, #ffffff);
+}
+// 底部空标签
+.bottomPush {
+  height: 98px;
+}
+// 固定底部的两个按钮
+.bottomButton {
+  position: fixed;
+  bottom: 0;
+  @include fj;
+  @include wh(100%, 98px);
+  margin-top: -98px;
+
+  button {
+    width: 50%;
+  }
+}
+
 .tabActive {
   border-bottom: 1px solid #37c2cf;
   color: #1E1E1E;
@@ -182,6 +222,8 @@ html {
   width: 50px;
   height: 20px;
   @include flexHCenter;
+  margin-left: -20px;
+  padding-left: 20px;
 }
 
 .fs-EmailBox {
@@ -199,7 +241,7 @@ html {
 
 .cellValueClass {
   font-family: $fr;
-  @include sc(30px, rgba(30, 30, 30, 1));
+  @include sc(30px, #1E1E1E);
 }
 
 // 邮件
@@ -248,10 +290,125 @@ input {
     border-bottom: 4px solid #f4f6f8;
 
     .liLeft {
-      // width: 36%;
       @include fj(flex-start);
       @include sc(30px, rgba(136, 136, 136, 1));
     }
 
   }
+}
+
+//优惠券
+.splitBox {
+  background-color: #fff;
+  margin: 0 40px;
+
+  .split-line {
+    position: relative;
+    flex: 0 0 0;
+    border-bottom: 4px dashed #f1f3f7;
+    background: #fff;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      @include wh(36px, 36px);
+      background: #f1f3f7;
+      top: -18px;
+      z-index: 1;
+      border-radius: 50%;
+    }
+
+    &::before {
+      left: -18px;
+    }
+
+    &::after {
+      right: -18px;
+    }
+  }
+}
+
+// 工作流flow样式
+.flow {
+  background-color: #fff;
+  margin: 0 40px 40px;
+  padding: 40px 28px;
+
+  .flowMain {
+    padding-top: 20px;
+    font-family: $fr;
+
+    li {
+      @include fd;
+
+      &:last-child {
+        .shuxian {
+          width: 0 !important;
+        }
+      }
+
+      .flowLeft {
+        .flowFlag {
+          @include flexCenter;
+
+          img {
+            @include wh(46px, 46px);
+          }
+        }
+        @include fd(column);
+        margin-right: 54px;
+
+        .iconTittle {
+          margin-top: 6px;
+          @include sc(24px, rgba(136, 136, 136, 1));
+          @include flexCenter;
+        }
+
+        .shuxianBox {
+          width: 100%;
+          @include flexWCenter;
+          margin: 10px 0;
+
+          .shuxian {
+            padding: 6px 0;
+            @include wh(2px, 106px);
+            background: rgb(244, 246, 248);
+            // background: red;
+          }
+        }
+      }
+
+      .flowRight {
+        @include fj;
+
+        .flowRightImgBox {
+          @include wh(80px, 80px);
+          margin-right: 26px;
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+
+        .flowTime {
+          @include sc(24px, #888888);
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+// 梯形封条标签
+.Tittleflag {
+  position: absolute;
+  right: -11%;
+  top: 13%;
+  @include sc(20px, #fff);
+  transform: rotate(30deg);
+  background-color: #76cafb;
+  @include wh(40%, 42px);
+  @include flexCenter;
 }
