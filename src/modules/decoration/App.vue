@@ -50,10 +50,6 @@ export default {
   opacity: 0;
 }
 
-.fs-addNew {
-  @include wh(18px, 18px);
-  margin-left: 10px;
-}
 
 #app {
   height: 100%;

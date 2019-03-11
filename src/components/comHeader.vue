@@ -31,6 +31,6 @@ export default {
 @import "src/assets/sass/mixin";
 
 .comHeader {
-  background-color: #3f4fa6;
+  background-color: #3F4FA6;
 }
 </style>
