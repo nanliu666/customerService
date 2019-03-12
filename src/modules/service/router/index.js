@@ -1,4 +1,3 @@
-import App from '../App'
 
 //事务模块
 const serviceAdd = resolve => require(['../page/serviceAdd'], resolve);

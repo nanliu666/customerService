@@ -43,8 +43,18 @@
         </group>
         <li class="upload">
           <div class="uploadTittle">上传图片</div>
-          <div class="uploadBox" @click="getUpload">
-            <i class="iconfont icon-picture-o"></i>
+          <div class="upLoadBox">
+            <ul ref="imgUl" class="imgBox">
+              <li class="imgBoxLi">
+                <img src="./images/jinkesi.jpg" alt>
+              </li>
+              <li class="imgBoxLi">
+                <img src="./images/jinkesi.jpg" alt>
+              </li>
+            </ul>
+            <div class="uploadBox" @click="getUpload">
+              <i class="iconfont icon-picture-o"></i>
+            </div>
           </div>
         </li>
       </div>
@@ -58,16 +68,12 @@
 </template>
 
 <script>
-import { XTextarea, Group, Actionsheet } from "vux";
+import { XTextarea, Group } from "vux";
 export default {
   name: "serviceAdd",
   data() {
     return {
       showMenus: false,
-      menus: {
-        menu1: "拍照",
-        menu2: "相册"
-      },
       headerTittle: "服务申请",
       nextDate: "",
       nowDate: "",
@@ -83,7 +89,6 @@ export default {
       require(["../../../components/comHeader.vue"], resolve);
     },
     XTextarea,
-    Actionsheet,
     Group
   },
   created() {
@@ -92,25 +97,27 @@ export default {
   },
   methods: {
     getUpload() {
-      cordova.exec(
-        this.successCallBack,
-        this.errorCallBack,
-        "ifcaPlugIns",
-        "callCameraFunc",
-        [
-          {
-            enabledcamera: true,
-            enabledphoto: true,
-            imageEdit: true,
-            waterMark: true,
-            waterMarkText: "项目部"
-          }
-        ]
-      );
+      if (process.env.NODE_ENV === "production") {
+        cordova.exec(
+          this.successCallBack,
+          this.errorCallBack,
+          "ifcaPlugIns",
+          "callCameraFunc",
+          [
+            {
+              enabledcamera: true,
+              enabledphoto: true,
+              imageEdit: true,
+              waterMark: true,
+              waterMarkText: "项目部"
+            }
+          ]
+        );
+      }
     },
     getMenu(val) {},
     successCallBack(data) {
-      console.log(1)
+      console.log(1);
       for (var i = 0; i < data; i++) {
         // 打印图片路径
         console.log(data[i]["imageUrl"]);
@@ -120,7 +127,7 @@ export default {
       }
     },
     errorCallBack(data) {
-      console.log('失败')
+      console.log("失败");
       console.log(data);
     },
     toggleIndoor() {
@@ -176,10 +183,28 @@ export default {
       @include sc(30px, #1e1e1e);
       margin: 10px 0 20px;
     }
+    .upLoadBox {
+      @include fd;
+      flex-wrap: wrap;
+    }
     .uploadBox {
       @include wh(136px, 136px);
       border: 1px dashed #dbdbdb;
       @include flexCenter;
+    }
+    .imgBox {
+      @include fd;
+      flex-wrap: wrap;
+      .imgBoxLi {
+        border: 1px dashed #dbdbdb;
+        @include wh(136px, 136px);
+        @include flexCenter;
+        margin-right: 20px;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
     }
   }
 }
